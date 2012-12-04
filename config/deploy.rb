@@ -14,7 +14,7 @@ server conf_server, :app, :web, :db, :primary => true
 set :use_sudo, false
 set :rewrite_base, "/iphone-3gs-white/"
 
-before "deploy:symlink", "copy_to_prod"
+before "deploy:finalize_update", "copy_to_prod"
 
 desc "Copies the site to the right place"
 task :copy_to_prod do
